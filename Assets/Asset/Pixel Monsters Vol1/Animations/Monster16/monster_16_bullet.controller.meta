@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3531e8f0095134f47b1d20d185e0994f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198514
+  packageName: Pixel Monsters Vol.1
+  packageVersion: 1.0
+  assetPath: Assets/Pixel Monsters Vol1/Animations/Monster16/monster_16_bullet.controller
+  uploadId: 589236

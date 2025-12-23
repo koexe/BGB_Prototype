@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0edb4c8ead549e4bbc6de7f83d06281
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/crow/crow_animator.controller
+  uploadId: 664277

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c3f8c1f24d72f884fbb46f6daeded3f5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/candle/candle2_01.controller
+  uploadId: 664277

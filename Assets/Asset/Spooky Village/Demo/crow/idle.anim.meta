@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 501071361f1402e48889b3924f75aa4a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/crow/idle.anim
+  uploadId: 664277

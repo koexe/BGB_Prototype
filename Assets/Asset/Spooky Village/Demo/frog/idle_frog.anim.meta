@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4408fb5b1b8bfeb42b8b12a5f5b21a79
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/frog/idle_frog.anim
+  uploadId: 664277

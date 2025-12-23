@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9065a9efa14e36c48bdaac59c0ad41f4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/crow/grounding.anim
+  uploadId: 664277

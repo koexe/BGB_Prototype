@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5253a422032a6874f959db52a0746866
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/frog/idle_frog_01.controller
+  uploadId: 664277

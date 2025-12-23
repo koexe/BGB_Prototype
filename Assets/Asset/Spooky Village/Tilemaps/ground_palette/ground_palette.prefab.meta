@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f38aaf6ff2fe01645ba6c3c41a4c3498
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Tilemaps/ground_palette/ground_palette.prefab
+  uploadId: 664277

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3850a181155bcc84ebbebf0d13ba2d06
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Tilemaps/ground_palette/ground_tile_02_2.asset
+  uploadId: 664277

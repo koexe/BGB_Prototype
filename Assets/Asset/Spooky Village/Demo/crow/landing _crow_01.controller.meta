@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b37bf0417a040a4485ec3d84d6deb8c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/crow/landing _crow_01.controller
+  uploadId: 664277

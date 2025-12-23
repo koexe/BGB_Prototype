@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e8aa6656aa419143a5ff266ca3e7e38
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/lantern/witch_5.controller
+  uploadId: 664277

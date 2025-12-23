@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 31984b0e2d733ee4b90740360b6667d3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/witch_broom/witch_broom_0.controller
+  uploadId: 664277

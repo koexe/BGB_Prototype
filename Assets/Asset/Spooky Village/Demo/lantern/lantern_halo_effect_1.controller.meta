@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 46ba14f4886c13745a595c8b5a8bc3b0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/lantern/lantern_halo_effect_1.controller
+  uploadId: 664277

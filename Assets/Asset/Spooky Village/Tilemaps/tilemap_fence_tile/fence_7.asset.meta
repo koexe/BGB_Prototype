@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ee7644a9ce91ca447bbfcf67e0ccaf04
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Tilemaps/tilemap_fence_tile/fence_7.asset
+  uploadId: 664277

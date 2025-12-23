@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 414f6cee1a963654dba5985ea8d92131
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Other/URP_Renderer.asset
+  uploadId: 664277

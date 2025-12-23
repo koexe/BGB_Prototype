@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 586038da4eea038458ec10e3e30e6601
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/candle/candle_halo_effect_1.controller
+  uploadId: 664277

@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: fc06f68773a26e94fb04c14e4a979867
+  m_SerializeEntries:
+  - m_GUID: 04f2cd6c45d54aa4cb59f3a09402f474
+    m_Address: Assets/Prefab/Maps/Treasure/MapEntity 3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0be1e4f7943ac7a44ad76db535d11a1c
+    m_Address: Assets/Prefab/Maps/Elite/MapEntity 3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f503f22d2cc20d49bed39678a334f52
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2bf095a4ccc170344b88d2819f8e1ac4
+    m_Address: Assets/Prefab/Maps/Elite/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3749d0c958f7fba43a9f01c917a28897
+    m_Address: Assets/Prefab/Maps/Boss/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4139849f841bb034189d3335175bbe0b
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6575fbd874650e342a8a1a4cc6f8b8f7
+    m_Address: Assets/Prefab/Maps/Elite/MapEntity 2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80e708af882630244b7d93b47367c6d7
+    m_Address: Assets/Prefab/Maps/Treasure/MapEntity 2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84938fad8fc275b4193f793222c74f7c
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 7.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 910a76ccdc3dbd04dbd4c5e6117060ce
+    m_Address: Assets/Prefab/Maps/Treasure/MapEntity 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92fef1834bcc5414ea3f031a10d990e4
+    m_Address: Assets/Prefab/Maps/Treasure/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9758873d0c8431545b849268769a2185
+    m_Address: Assets/Prefab/Maps/Elite/MapEntity 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a911a17b454320f40bf16caf9cb4ab23
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 6.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0977eeaf454e7b48904b518902dfaee
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9db0426e91d7c547a66264d352e40b0
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5140a6b8c56b8b4f81b596f5cdeca07
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec2625ac4d07d3f4ab9e5550ca9b28fa
+    m_Address: Assets/Prefab/Maps/Start/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed1b449a2fa73d84ebd144277895a6e3
+    m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ffbbed248a9d890409b94f1f98fac8bf, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1c325cd0231810843b68acb9dfcebdd7, type: 2}
+    - {fileID: 11400000, guid: 31a6e9e20a2213e429389f9cc5fe6506, type: 2}

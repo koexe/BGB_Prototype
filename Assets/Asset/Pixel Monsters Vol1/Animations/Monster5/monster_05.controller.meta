@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0410fd32810eebd4e8336c1cd8a675f3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 198514
+  packageName: Pixel Monsters Vol.1
+  packageVersion: 1.0
+  assetPath: Assets/Pixel Monsters Vol1/Animations/Monster5/monster_05.controller
+  uploadId: 589236

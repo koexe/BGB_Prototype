@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0a2188a60331a3540997ef4b24a785c9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/crow/take_off_crow_and_fly.controller
+  uploadId: 664277

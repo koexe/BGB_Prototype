@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5ce6b24790d80e54486e4252f060098a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 151714
+  packageName: Spooky Village
+  packageVersion: 1.0
+  assetPath: Assets/Spooky Village/Demo/graveyard_window/window/graveyard_14.controller
+  uploadId: 664277
