@@ -76,7 +76,7 @@ public enum RoomType
     Start = 0,
     NomalMonster = 1,
     EliteMonster = 2,
-    Treasure = 3,
+    Shop = 3,
     Boss = 4
 }
 

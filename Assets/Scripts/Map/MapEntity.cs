@@ -12,20 +12,17 @@ public class MapEntity : MonoBehaviour
 
     public (int stage, RoomType roomType) GetRoomInfo() => (this.stage, this.roomType);
     public int GetRoomCode() => this.roomCode;
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="_availableWay">0 -> up, 1 -> down, 2-> right, 3-> left</param>
-    public void CreateDoors(bool[] _availableWay)
+
+    public void CreateDoors(bool _isSplited)
     {
-        for (int i = 0; i < 4; i++)
+        if (_isSplited)
         {
-            if (_availableWay[i])
-            {
-                var t_door = Instantiate(this.doorPrefab, this.doorTr[i]);
-                int t_dir = i;
-                t_door.GetComponent<MapDoor>().Initialization(() => { IngameManager.instance.ChangeMap(t_dir); });
-            }
+            Instantiate(this.doorPrefab, this.doorTr[0]).GetComponent<MapDoor>().Initialization(() => IngameManager.instance.MoveMap(0));
+            Instantiate(this.doorPrefab, this.doorTr[2]).GetComponent<MapDoor>().Initialization(() => IngameManager.instance.MoveMap(1));
+        }
+        else
+        {
+            Instantiate(this.doorPrefab, this.doorTr[1]).GetComponent<MapDoor>().Initialization(() => IngameManager.instance.MoveMap(0));
         }
     }
 }
