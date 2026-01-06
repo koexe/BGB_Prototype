@@ -11,6 +11,7 @@ public class IngameManager : MonoBehaviour
     [SerializeField] string seed;
     MapNode[,] currentMap;
     [SerializeField] MapManager mapManager;
+    [SerializeField] public GameState gameState;
 
     [Header("Map Gizmo Settings")]
     [SerializeField] bool drawMapGizmos = true;
@@ -39,4 +40,9 @@ public class IngameManager : MonoBehaviour
     }
 
 
+}
+public enum GameState
+{
+    Running,
+    Paused
 }
