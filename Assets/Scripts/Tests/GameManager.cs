@@ -46,9 +46,3 @@ public class GameManagerr : MonoBehaviour
         }
     }
 }
-
-public enum GameState
-{
-    Running,
-    Paused,
-}

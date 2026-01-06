@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: testseed
   mapManager: {fileID: 993855054}
+  gameState: 0
   drawMapGizmos: 1
   mapOrigin: {x: 0, y: 0}
   cellSize: 1
@@ -461,6 +462,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSeed: TEST_SEED
+--- !u!1 &1780987541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780987543}
+  - component: {fileID: 1780987542}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1780987542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780987541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72463809dd842164da843350f1237f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1780987543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780987541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115781040
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,10 +515,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2115781045}
-  - component: {fileID: 2115781044}
   - component: {fileID: 2115781043}
   - component: {fileID: 2115781042}
   - component: {fileID: 2115781041}
+  - component: {fileID: 2115781047}
+  - component: {fileID: 2115781046}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -580,36 +626,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2115781044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115781040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab07ea2361c994b438c94dac48a64ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 0}
-  currentDir: {x: 0, y: 0}
-  speed: 3
-  bulletSetting:
-  - {fileID: 11400000, guid: 63c0e0ad1c9874b4d95430f95c2511ad, type: 2}
-  - {fileID: 11400000, guid: 6acdf6df491b8b742af5fc2f2d2e1f19, type: 2}
-  - {fileID: 11400000, guid: 4bda155eaede91f44a48e41d6bff4915, type: 2}
-  - {fileID: 11400000, guid: 0cbe58dcd52340940839b049236bde3a, type: 2}
-  bullets: []
-  currentBulletIndex: 0
-  isInAttack: 0
-  attackCooltime: 0
-  currentAttackCooltime: 0
-  rollCooltime: 3
-  currentRollCooltime: 0
-  isInRoll: 0
-  rollTime: 0.25
-  currentRolltime: 0
 --- !u!4 &2115781045
 Transform:
   m_ObjectHideFlags: 0
@@ -625,3 +641,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115781046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115781040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ede3d516fa8284181fb439eaf6a6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTr: {fileID: 2115781045}
+  inputForce: {x: 0, y: 0}
+  currentForces: []
+--- !u!114 &2115781047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115781040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89bedbe96a52e74f976ddfa7a22347c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  physicsModule: {fileID: 2115781046}
+  speed: 3
+  currentInput: {x: 0, y: 0}
+  rollCooltime: 0
+  currentRollCooltime: 0
+  isInRoll: 0
+  rollForce:
+    forceType: 0
+    direction: {x: 0, y: 0}
+    magnitude: 10
+    duration: 0.2
