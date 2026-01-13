@@ -250,6 +250,8 @@ MonoBehaviour:
   seed: testseed
   mapManager: {fileID: 993855054}
   gameState: 0
+  currentWeapon: 1
+  player: {fileID: 2115781047}
   drawMapGizmos: 1
   mapOrigin: {x: 0, y: 0}
   cellSize: 1
@@ -674,8 +676,10 @@ MonoBehaviour:
   rollCooltime: 0
   currentRollCooltime: 0
   isInRoll: 0
+  isAttackCooltime: 0
   rollForce:
     forceType: 0
     direction: {x: 0, y: 0}
     magnitude: 10
     duration: 0.2
+  temp_bullet: {fileID: 656194835972285259, guid: 4a8e76da4b0ce5f48a615baaf7ed9719, type: 3}

@@ -109,6 +109,7 @@ public class MapManager : MonoBehaviour
         this.mapNodes = _map;
         this.currentMap = this.mapEntities[0, 0];
         this.mapEntities[0,0].gameObject.SetActive(true);
+        this.currentMap.MoveMap();
     }
 
     public void MoveMap(int _dir)
@@ -123,6 +124,7 @@ public class MapManager : MonoBehaviour
         this.currentMap.gameObject.SetActive(false);
         this.currentMap = this.mapEntities[this.currentDepth, _dir];
         this.currentMap.gameObject.SetActive(true);
+        this.currentMap.MoveMap();
     }
     // ----------------- Gizmo -----------------
 

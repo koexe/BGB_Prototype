@@ -18,9 +18,15 @@ public class MapEntity : MonoBehaviour
     [SerializeField] int targetKillCount;
 
     [SerializeField] bool isWaveEnded;
-
+    [SerializeField] bool spawnOnStart = true;
     public (int stage, RoomType roomType) GetRoomInfo() => (this.stage, this.roomType);
     public int GetRoomCode() => this.roomCode;
+
+    public void MoveMap()
+    {
+        if (this.spawnOnStart)
+            WaveStart();
+    }
 
     public void CreateDoors(bool _isSplited)
     {

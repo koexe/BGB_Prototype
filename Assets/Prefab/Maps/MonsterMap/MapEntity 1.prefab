@@ -111,6 +111,7 @@ MonoBehaviour:
   currentKillCount: 0
   targetKillCount: 0
   isWaveEnded: 0
+  spawnOnStart: 1
 --- !u!1 &996751909561417917
 GameObject:
   m_ObjectHideFlags: 0

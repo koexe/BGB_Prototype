@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BuffSystem
 {
-    public Dictionary<BuffType, BuffBlock> buffBlocks;
+    public Dictionary<BuffType, BuffBlockk> buffBlocks;
     public float GetStat(BuffType _type)
     {
         if (this.buffBlocks.TryGetValue(_type, out var t_value))
@@ -14,17 +14,17 @@ public class BuffSystem
     }
     public BuffSystem()
     {
-        this.buffBlocks = new Dictionary<BuffType, BuffBlock>();
+        this.buffBlocks = new Dictionary<BuffType, BuffBlockk>();
     }
     public void AddBuff(BuffType _type, float _value)
     {
-        this.buffBlocks.Add(_type, new BuffBlock() { buffType = _type, buffAmount = _value });
+        this.buffBlocks.Add(_type, new BuffBlockk() { buffType = _type, buffAmount = _value });
     }
 }
 
-public class BuffBlock
+public class BuffBlockk
 {
-    public BuffType buffType;
+    public BuffType buffType; 
     public float buffAmount;
 }
 
