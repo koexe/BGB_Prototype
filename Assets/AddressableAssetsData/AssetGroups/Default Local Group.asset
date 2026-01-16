@@ -17,58 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: fc06f68773a26e94fb04c14e4a979867
   m_SerializeEntries:
-  - m_GUID: 638d1157bc998424fb73e0f036477e3e
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 8.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 3749d0c958f7fba43a9f01c917a28897
-    m_Address: Assets/Prefab/Maps/Boss/MapEntity.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
   - m_GUID: 4139849f841bb034189d3335175bbe0b
     m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: b217364d28c9fe64f8d1dd1ab63fa6d8
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 7.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 5d9870090a53131409a2db5fbea68db0
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 7549d0d32aa28954487d3b7b4cb97037
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 44bcc12e8ac7c9746949598deb95461e
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 3f96cb3727fed794494a72b00f063be4
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 6.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 432d2decdf3026849b0401f5ff167b36
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: 54d81e8bce0fd6c4fbaa1238eeff038b
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 9.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - MapEntity
-  - m_GUID: dc0556f52be14544a97588822174e170
-    m_Address: Assets/Prefab/Maps/MonsterMap/MapEntity 10.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - MapEntity
