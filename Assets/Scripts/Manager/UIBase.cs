@@ -1,0 +1,28 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public abstract class UIBase : MonoBehaviour
+{
+    protected UIData data;
+
+    public GameObject contents;
+    public abstract void Initialization(UIData _data);
+    public abstract void Show();
+    public abstract void Hide();
+    public SortingGroup sortingGroup;
+    public bool isShow;
+
+}
+
+
+public class UIData
+{
+    public string identifier;
+    public int order;
+    public bool isAllowMultifle;
+
+    public Action onHide;
+}

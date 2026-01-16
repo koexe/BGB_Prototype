@@ -17,11 +17,21 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: fc06f68773a26e94fb04c14e4a979867
   m_SerializeEntries:
+  - m_GUID: 3749d0c958f7fba43a9f01c917a28897
+    m_Address: Assets/Prefab/Maps/Boss/MapEntity.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MapEntity
   - m_GUID: 4139849f841bb034189d3335175bbe0b
     m_Address: Assets/Prefab/Maps/NomalMonster/MapEntity 1.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - MapEntity
+  - m_GUID: dbb97d56960cfb34d95327ea08174430
+    m_Address: Assets/TextAssets/WeaponTable.csv
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - WeaponInfo
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ffbbed248a9d890409b94f1f98fac8bf, type: 2}
   m_SchemaSet:

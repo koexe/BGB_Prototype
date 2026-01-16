@@ -307,6 +307,8 @@ MonoBehaviour:
   seed: testseed
   mapManager: {fileID: 993855054}
   gameState: 0
+  currentWeapon: 1
+  player: {fileID: 2115781047}
   drawMapGizmos: 1
   mapOrigin: {x: 0, y: 0}
   cellSize: 1
@@ -577,6 +579,8 @@ GameObject:
   - component: {fileID: 2115781041}
   - component: {fileID: 2115781047}
   - component: {fileID: 2115781046}
+  - component: {fileID: 2115781048}
+  - component: {fileID: 2115781049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -726,13 +730,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicsModule: {fileID: 2115781046}
+  weapon: {fileID: 2115781048}
   speed: 3
   currentInput: {x: 0, y: 0}
   rollCooltime: 0
   currentRollCooltime: 0
   isInRoll: 0
+  isAttackCooltime: 0
   rollForce:
     forceType: 0
     direction: {x: 0, y: 0}
     magnitude: 10
     duration: 0.2
+  temp_bullet: {fileID: 656194835972285259, guid: 4a8e76da4b0ce5f48a615baaf7ed9719, type: 3}
+--- !u!114 &2115781048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115781040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb730b1eab6c35944af97aad886ae7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBullets:
+  - {fileID: 2115781049}
+--- !u!114 &2115781049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115781040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b53aea4c2190c46916710272e968e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMag: 0

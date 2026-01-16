@@ -7,16 +7,22 @@ public class IngameManager : MonoBehaviour
     {
         instance = this;
     }
-
+    [Header("현재 게임 정보")]
     [SerializeField] string seed;
     MapNode[,] currentMap;
     [SerializeField] MapManager mapManager;
     [SerializeField] public GameState gameState;
+    [SerializeField] public int currentWeapon;
+    [SerializeField] PlayerCharacter player;
+
 
     [Header("Map Gizmo Settings")]
     [SerializeField] bool drawMapGizmos = true;
     [SerializeField] Vector2 mapOrigin = Vector2.zero; // (0,0) 방의 월드 좌표 기준점
     [SerializeField] float cellSize = 1f;              // 방 간 간격 / 크기
+
+
+
 
 
     private void Update()
@@ -25,6 +31,7 @@ public class IngameManager : MonoBehaviour
         {
             MapGen(this.seed);
             this.mapManager.CreateMapEntity(this.currentMap);
+            this.player.Initialization();
         }
     }
 

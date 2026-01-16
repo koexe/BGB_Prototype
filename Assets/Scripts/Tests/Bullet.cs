@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameManagerr.instance.gameState == GameState.Paused) return;
 
         if (this.isHoming)
         {
