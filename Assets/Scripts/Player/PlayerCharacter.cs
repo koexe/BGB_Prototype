@@ -10,8 +10,7 @@ public class PlayerCharacter : MonoBehaviour
 
     [Header("스탯")]
     StatSystem statSystem;
-    PlayerWeapon weapon;
-    PlayerBullet bullet;
+    [SerializeField] PlayerWeapon weapon;
 
     [Header("이동")]
     [SerializeField] float speed;
@@ -39,6 +38,7 @@ public class PlayerCharacter : MonoBehaviour
     void InitializeStat()
     {
         this.statSystem = new StatSystem(DataLibrary.instance.GetWeaponInfo(IngameManager.instance.currentWeapon));
+        this.weapon.Initialization(this.statSystem);
     }
     #endregion
     #region 인풋 관련
@@ -95,24 +95,11 @@ public class PlayerCharacter : MonoBehaviour
         this.isInRoll = false;
     }
 
-    async void StartAttack()
+    void StartAttack()
     {
-        if (IngameManager.instance.gameState != GameState.Running || this.isAttackCooltime) return;
+        if (IngameManager.instance.gameState != GameState.Running) return;
+        this.weapon.Attack(this.temp_bullet.gameObject);
 
-        this.isAttackCooltime = true;
-
-        var t_bullet = Instantiate(this.temp_bullet).GetComponent<Bullet>();
-        Vector3 t_mouseScreenPos = Input.mousePosition;
-        Vector3 t_mouseWorldPos = Camera.main.ScreenToWorldPoint(t_mouseScreenPos);
-        t_mouseWorldPos.z = 0f;
-
-        Vector3 t_dir = (t_mouseWorldPos - transform.position).normalized;
-        t_bullet.transform.position = this.transform.position;
-        t_bullet.Initialization(t_dir, 10f, 1f, 5f);
-
-
-        await UniTask.WaitForSeconds(1 / this.statSystem.GetStat(StatType.Ats));
-        this.isAttackCooltime = false;
     }
     #endregion
 

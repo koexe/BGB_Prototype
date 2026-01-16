@@ -25,7 +25,10 @@ public class StatSystem
     {
         this.buffBlocks.Add(_buff);
     }
-
+    public void RemoveBuff(BuffBlock _buff)
+    {
+        this.buffBlocks.Remove(_buff);
+    }
     public float GetStat(StatType _stat)
     {
         float t_base = 0f;
@@ -45,11 +48,8 @@ public class StatSystem
                     case StatSign.Static:
                         t_base += t_value.value;
                         break;
-                    case StatSign.Plus:
+                    case StatSign.Constant:
                         t_constMod += t_value.value;
-                        break;
-                    case StatSign.Minus:
-                        t_constMod -= t_value.value;
                         break;
                     case StatSign.Percentage:
                         t_magMod += t_value.value;

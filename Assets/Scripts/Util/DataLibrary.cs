@@ -18,6 +18,8 @@ public class DataLibrary : MonoBehaviour
     Dictionary<int, Dictionary<RoomType, List<MapEntity>>> mapDics;
     Dictionary<int, WeaponInfo> weaponDics;
     Dictionary<string, GameObject> uiPrefabs;
+    Dictionary<PerkType, Dictionary<int, PerkInfo>> perkInfoDic;
+
     public async void LoadAllAssets()
     {
         await LoadMaps();
@@ -134,7 +136,19 @@ public class WeaponInfo
     public float critMag;
 }
 
-
+public class PerkInfo
+{
+    public int perkCode;
+    public string perkName;
+    public string perkDescription;
+    public StatBlock[] perkStat;
+    public PerkType perkType;
+}
+public enum PerkType
+{
+    Perk = 0,
+    Option = 1,
+}
 public enum RoomType
 {
     Start = 0,
@@ -169,7 +183,6 @@ public enum StatType
 public enum StatSign
 {
     Static = 0,
-    Plus = 1,
-    Minus = 2,
-    Percentage = 3,
+    Constant = 1,
+    Percentage = 2,
 }
