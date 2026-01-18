@@ -27,8 +27,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - WeaponInfo
+    - TextAssets
   - m_GUID: fcba5200e43f7fb4bbe71578c2929b0b
     m_Address: Assets/TextMesh Pro/Fonts/NotoSansKR-Bold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aed9e14434d7ad44e8bd62519c1a99eb
+    m_Address: Assets/Prefab/UI/IngameUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UIPrefab
+  - m_GUID: 9f7b0a76a1a7a22449afc843dfa07a8c
+    m_Address: Assets/TextAssets/PerkOptions.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

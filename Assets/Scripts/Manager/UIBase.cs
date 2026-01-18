@@ -12,7 +12,6 @@ public abstract class UIBase : MonoBehaviour
     public abstract void Initialization(UIData _data);
     public abstract void Show();
     public abstract void Hide();
-    public SortingGroup sortingGroup;
     public bool isShow;
 
 }

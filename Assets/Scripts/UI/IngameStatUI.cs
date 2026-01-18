@@ -1,21 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IngameStatUI : UIBase
 {
-    public override void Hide()
-    {
-        throw new System.NotImplementedException();
-    }
+    public static string identifier = "IngameStatUI";
+    [SerializeField] ToggleListUI healthUI;
+    [SerializeField] ToggleListUI rollUI;
+    [SerializeField] ToggleListUI magUI;
+
 
     public override void Initialization(UIData _data)
     {
-        throw new System.NotImplementedException();
+        IngameStatUIData t_IngameStatUIData = _data as IngameStatUIData;
+        if (t_IngameStatUIData == null)
+        {
+            Debug.Log("Invalid DataType in FadeUI");
+            return;
+        }
+        this.healthUI.Initialization(t_IngameStatUIData.hp);
+        this.rollUI.Initialization(t_IngameStatUIData.rollPoint);
+        this.magUI.Initialization(t_IngameStatUIData.magAmount);
+    }
+
+    public override void Hide()
+    {
+        this.isShow = false;
+        this.contents.SetActive(false);
+        this.data.onHide?.Invoke();
     }
 
     public override void Show()
     {
-        throw new System.NotImplementedException();
+        this.isShow = true;
+        this.contents.SetActive(true);
     }
+}
+
+public class IngameStatUIData : UIData
+{
+    public int hp;
+    public int rollPoint;
+    public int magAmount;
 }

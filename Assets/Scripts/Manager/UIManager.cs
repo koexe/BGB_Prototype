@@ -141,23 +141,6 @@ public class UIManager : MonoBehaviour
             return null;
         }
 
-        uiInstance.sortingGroup.sortingLayerName = "UIElements";
-
-        // set order
-        if (_data.order == -1)
-        {
-            int minOrder = 9999;
-            foreach (var sortingGroup in uiRoot.GetComponentsInChildren<SortingGroup>())
-            {
-                if (sortingGroup.sortingOrder < minOrder)
-                    minOrder = sortingGroup.sortingOrder;
-            }
-            uiInstance.sortingGroup.sortingOrder = minOrder;
-        }
-        else
-        {
-            uiInstance.sortingGroup.sortingOrder = _data.order;
-        }
 
         // UI Init and Show
         this.activeUIs[_data.identifier] = uiInstance;

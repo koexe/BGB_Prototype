@@ -85,6 +85,7 @@ MonoBehaviour:
     - default
     - MapEntity
     - TextAssets
+    - UIElements
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: aaa2495e04ad4444baa0873bbd03f80f, type: 2}

@@ -28,6 +28,16 @@ public class PlayerCharacter : MonoBehaviour
     {
         InitializeInput();
         InitializeStat();
+
+        UIManager.instance.AddOrUpdateUI<IngameStatUI>
+            (new IngameStatUIData()
+            {
+                identifier = IngameStatUI.identifier,
+                hp = 3,
+                rollPoint = 2,
+                magAmount = (int)this.statSystem.GetStat(StatType.Mag),
+            });
+
     }
     private void FixedUpdate()
     {

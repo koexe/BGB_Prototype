@@ -24,11 +24,14 @@ public class DataLibrary : MonoBehaviour
     {
         await LoadMaps();
         await LoadWeapons();
+        await LoadPerks();
+        await LoadUIPrefab();
         Debug.Log("All good");
     }
 
     AsyncOperationHandle<IList<GameObject>> mapHandle;
     AsyncOperationHandle<IList<TextAsset>> weaponInfoHandle;
+    AsyncOperationHandle<IList<TextAsset>> perkInfoHandle;
     AsyncOperationHandle<IList<GameObject>> uiHandle;
     async UniTask LoadMaps()
     {
@@ -63,13 +66,16 @@ public class DataLibrary : MonoBehaviour
     }
     async UniTask LoadWeapons()
     {
-        this.weaponInfoHandle = Addressables.LoadAssetsAsync<TextAsset>("WeaponInfo", (t_info) =>
-        {
-            this.weaponDics = CSVReader.ReadWeaponCSV(t_info);
-        });
-        await weaponInfoHandle.ToUniTask();
+        var t_operation = Addressables.LoadAssetAsync<TextAsset>("Assets/TextAssets/WeaponTable.csv");
+        await t_operation.ToUniTask();
+        this.weaponDics = CSVReader.ReadWeaponCSV(t_operation.Result);
     }
-
+    async UniTask LoadPerks()
+    {
+        var t_operation = Addressables.LoadAssetAsync<TextAsset>("Assets/TextAssets/PerkOptions.csv");
+        await t_operation.ToUniTask();
+        this.perkInfoDic = CSVReader.ReadPerkCSV(t_operation.Result);
+    }
 
     public List<MapEntity> GetMaps(int _stage, RoomType _type)
     {

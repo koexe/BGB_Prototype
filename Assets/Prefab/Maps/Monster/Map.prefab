@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 7509094400369729534}
   - {fileID: 3385546696444993389}
   - {fileID: 258705154821008307}
-  doorPrefab: {fileID: 6678862650347965713, guid: 031e0b5a3294d5e4d9e9e1a2df57b24d, type: 3}
+  doorPrefab: {fileID: 2004360567085030208, guid: 4a1b7d07cd0a4af499c282a93d28c91b, type: 3}
   waveSetting:
   - enemySetting:
     - enemy: {fileID: -7467744087590539764, guid: 3e58338ec77c2d845ac930c6f845d593, type: 3}
