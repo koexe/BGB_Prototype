@@ -4,10 +4,20 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
+using System;
 
 public class DataLibrary : MonoBehaviour
 {
     public static DataLibrary instance;
+
+    public Dictionary<EnemyType, Type> enemyTypes = new Dictionary<EnemyType, Type>()
+    {
+      { EnemyType.BoomMushroom, typeof(BoomshhRoomBehavior) },
+      { EnemyType.Blindmaw,typeof(BlindmawBehavior) },
+
+    };
+
+
 
     public void Awake()
     {
@@ -127,6 +137,20 @@ public class DataLibrary : MonoBehaviour
             return null;
         }
     }
+    public Type GetEnemyType(EnemyType _enemyType)
+    {
+        if (this.enemyTypes.TryGetValue(_enemyType, out var _value))
+        {
+            return _value;
+        }
+        else
+        {
+            LogUtil.Log("UI Name Error");
+            return null;
+        }
+    }
+
+
     #endregion
 }
 
@@ -192,3 +216,10 @@ public enum StatSign
     Constant = 1,
     Percentage = 2,
 }
+
+public enum EnemyType
+{
+    BoomMushroom = 1,
+    Blindmaw = 2,
+}
+

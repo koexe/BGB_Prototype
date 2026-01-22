@@ -16,15 +16,6 @@ public class IngameManager : MonoBehaviour
     [SerializeField] PlayerCharacter player;
 
 
-    [Header("Map Gizmo Settings")]
-    [SerializeField] bool drawMapGizmos = true;
-    [SerializeField] Vector2 mapOrigin = Vector2.zero; // (0,0) 방의 월드 좌표 기준점
-    [SerializeField] float cellSize = 1f;              // 방 간 간격 / 크기
-
-
-
-
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -46,7 +37,7 @@ public class IngameManager : MonoBehaviour
         
     }
 
-
+    public PlayerCharacter GetPlayer() => this.player;
 }
 public enum GameState
 {

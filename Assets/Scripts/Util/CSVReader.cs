@@ -7,7 +7,6 @@ using UnityEngine;
 
 public static class CSVReader
 {
-    static string LINE_SPLIT_RE = @"\r\n|\n\r|\n|\r";
     public static Dictionary<int, WeaponInfo> ReadWeaponCSV(TextAsset _csv)
     {
         Dictionary<int, WeaponInfo> t_dic = new Dictionary<int, WeaponInfo>();

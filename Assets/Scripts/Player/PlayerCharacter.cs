@@ -41,6 +41,7 @@ public class PlayerCharacter : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (IngameManager.instance.gameState != GameState.Running) return;
         this.physicsModule.SetInputForce(this.currentInput.normalized * this.speed);
         this.currentInput = Vector2.zero;
     }

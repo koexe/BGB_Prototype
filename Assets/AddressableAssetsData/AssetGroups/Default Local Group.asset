@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: Assets/TextAssets/PerkOptions.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5d2e2da30207f084d9b896d77612fadd
+    m_Address: Assets/Prefab/Maps/Monster/Map 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ffbbed248a9d890409b94f1f98fac8bf, type: 2}
   m_SchemaSet:
