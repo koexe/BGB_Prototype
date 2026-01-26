@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -380,12 +379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: testseed
   mapManager: {fileID: 993855054}
-  gameState: 0
+  gameState: 1
   currentWeapon: 1
   player: {fileID: 2115781047}
-  drawMapGizmos: 1
-  mapOrigin: {x: 0, y: 0}
-  cellSize: 1
 --- !u!4 &1288566770
 Transform:
   m_ObjectHideFlags: 0
@@ -456,6 +452,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -766,6 +763,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -956,6 +954,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicsModule: {fileID: 2115781046}
   weapon: {fileID: 2115781048}
+  maxHp: 3
+  currentHp: 0
+  maxRoll: 2
+  currentRoll: 0
+  maxMag: 10
+  currentMag: 0
+  rollRegain: 2
+  currentRollRegain: 0
   speed: 3
   currentInput: {x: 0, y: 0}
   rollCooltime: 0

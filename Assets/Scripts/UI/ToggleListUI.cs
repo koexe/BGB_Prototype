@@ -35,14 +35,14 @@ public class ToggleListUI : MonoBehaviour
     {
         this.currentAmount--;
         this.currentAmount = Mathf.Clamp(this.currentAmount, 0, this.images.Count + 1);
-        this.images[this.currentAmount - 1].sprite = this.untoggledImage;
+        this.images[this.currentAmount].sprite = this.untoggledImage;
     }
 
     public void ToggleOne()
     {
-        this.currentAmount++;
         this.currentAmount = Mathf.Clamp(this.currentAmount, 0, this.images.Count + 1);
-        this.images[this.currentAmount - 1].sprite = this.toggledImage;
+        this.images[this.currentAmount].sprite = this.toggledImage;
+        this.currentAmount++;
     }
 
 

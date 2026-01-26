@@ -34,7 +34,7 @@ public class EnemyBase : MonoBehaviour
         if (this.hp <= 0)
         {
             this.onKill?.Invoke();
-            Instantiate(itemPrefab, this.transform.position, Quaternion.identity);
+            //Instantiate(itemPrefab, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
 

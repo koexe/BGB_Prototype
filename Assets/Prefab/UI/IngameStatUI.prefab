@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggledImage: {fileID: 21300000, guid: 49dbec3f73583e74f898b999a5ba97c8, type: 3}
-  untoggledImage: {fileID: 21300000, guid: 49dbec3f73583e74f898b999a5ba97c8, type: 3}
+  untoggledImage: {fileID: 21300000, guid: 0db4f89a0c812b2458769b547928725e, type: 3}
   elementPrefab: {fileID: 4362804417710256014, guid: c8f9e4dafe6aeac4281397a7e1b1a645, type: 3}
   images: []
   currentAmount: 0

@@ -36,6 +36,26 @@ public class IngameStatUI : UIBase
         this.isShow = true;
         this.contents.SetActive(true);
     }
+
+    public void UseRoll()
+    {
+        this.rollUI.UntoggleOne();
+    }
+    public void GainRoll()
+    {
+        this.rollUI.ToggleOne();
+    }
+    public void ToggleHp(bool _is)
+    {
+        if(_is)
+        {
+            this.healthUI.ToggleOne();
+        }
+        else
+        {
+            this.healthUI.UntoggleOne();
+        }
+    }
 }
 
 public class IngameStatUIData : UIData

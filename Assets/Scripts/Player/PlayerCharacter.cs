@@ -11,6 +11,16 @@ public class PlayerCharacter : MonoBehaviour
     [Header("스탯")]
     StatSystem statSystem;
     [SerializeField] PlayerWeapon weapon;
+    [SerializeField] int maxHp = 3;
+    [SerializeField] int currentHp;
+    [SerializeField] int maxRoll = 2;
+    [SerializeField] int currentRoll;
+    [SerializeField] int maxMag;
+    [SerializeField] int currentMag;
+
+    [SerializeField] float rollRegain = 2.0f;
+    [SerializeField] float currentRollRegain;
+
 
     [Header("이동")]
     [SerializeField] float speed;
@@ -28,13 +38,16 @@ public class PlayerCharacter : MonoBehaviour
     {
         InitializeInput();
         InitializeStat();
+        this.currentHp = this.maxHp;
+        this.currentRoll = this.maxRoll;
+        this.currentMag = (int)this.statSystem.GetStat(StatType.Mag);
 
         UIManager.instance.AddOrUpdateUI<IngameStatUI>
             (new IngameStatUIData()
             {
                 identifier = IngameStatUI.identifier,
-                hp = 3,
-                rollPoint = 2,
+                hp = this.maxHp,
+                rollPoint = this.maxRoll,
                 magAmount = (int)this.statSystem.GetStat(StatType.Mag),
             });
 
@@ -44,6 +57,7 @@ public class PlayerCharacter : MonoBehaviour
         if (IngameManager.instance.gameState != GameState.Running) return;
         this.physicsModule.SetInputForce(this.currentInput.normalized * this.speed);
         this.currentInput = Vector2.zero;
+        RollRegain();
     }
     #region 스탯 관련
     void InitializeStat()
@@ -51,6 +65,23 @@ public class PlayerCharacter : MonoBehaviour
         this.statSystem = new StatSystem(DataLibrary.instance.GetWeaponInfo(IngameManager.instance.currentWeapon));
         this.weapon.Initialization(this.statSystem);
     }
+
+    void RollRegain()
+    {
+        if (this.currentRoll == this.maxRoll) return;
+
+        if (this.currentRollRegain != 0)
+        {
+            this.currentRollRegain = Mathf.MoveTowards(this.currentRollRegain, 0, Time.fixedDeltaTime);
+        }
+        else
+        {
+            this.currentRollRegain = this.rollRegain;
+            this.currentRoll++;
+            UIManager.instance.GetUI<IngameStatUI>(IngameStatUI.identifier).GainRoll();
+        }
+    }
+
     #endregion
     #region 인풋 관련
     void InitializeInput()
@@ -93,7 +124,10 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (IngameManager.instance.gameState != GameState.Running || this.isInRoll) return;
 
+        if (this.currentRoll == 0) return;
+
         this.isInRoll = true;
+        this.currentRoll--;
         Vector3 t_mouseScreenPos = Input.mousePosition;
         Vector3 t_mouseWorldPos = Camera.main.ScreenToWorldPoint(t_mouseScreenPos);
         t_mouseWorldPos.z = 0f;
@@ -104,6 +138,9 @@ public class PlayerCharacter : MonoBehaviour
         await UniTask.WaitForSeconds(this.rollForce.duration);
 
         this.isInRoll = false;
+
+        UIManager.instance.GetUI<IngameStatUI>(IngameStatUI.identifier).UseRoll();
+
     }
 
     void StartAttack()
@@ -114,4 +151,21 @@ public class PlayerCharacter : MonoBehaviour
     }
     #endregion
 
+    void HitDamage()
+    {
+        this.currentHp--;
+        UIManager.instance.GetUI<IngameStatUI>(IngameStatUI.identifier).ToggleHp(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D _col)
+    {
+        if (_col.transform.TryGetComponent<EnemyBase>(out var t_enemy))
+        {
+            HitDamage();
+        }
+        else
+        {
+            return;
+        }
+    }
 }

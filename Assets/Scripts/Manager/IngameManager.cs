@@ -23,6 +23,7 @@ public class IngameManager : MonoBehaviour
             MapGen(this.seed);
             this.mapManager.CreateMapEntity(this.currentMap);
             this.player.Initialization();
+            this.gameState = GameState.Running;
         }
     }
 
