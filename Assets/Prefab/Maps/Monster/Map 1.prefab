@@ -104,7 +104,7 @@ MonoBehaviour:
   doorPrefab: {fileID: 2004360567085030208, guid: 4a1b7d07cd0a4af499c282a93d28c91b, type: 3}
   waveSetting:
   - enemySetting:
-    - enemy: {fileID: -7467744087590539764, guid: 3e58338ec77c2d845ac930c6f845d593, type: 3}
+    - enemy: {fileID: -7467744087590539764, guid: adf101666a4cd1e478497506f40d2bd5, type: 3}
       position: {fileID: 315422379730738852}
       interval: 0
     interval: 0

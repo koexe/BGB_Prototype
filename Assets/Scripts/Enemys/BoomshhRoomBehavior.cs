@@ -119,5 +119,7 @@ public class BoomshhRoomBehavior : EnemyBehavior
 
             await UniTask.Yield(PlayerLoopTiming.Update);
         }
+
+        Destroy(this.enemyBase.gameObject);
     }
 }
