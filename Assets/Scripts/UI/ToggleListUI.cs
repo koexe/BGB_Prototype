@@ -44,7 +44,4 @@ public class ToggleListUI : MonoBehaviour
         this.images[this.currentAmount].sprite = this.toggledImage;
         this.currentAmount++;
     }
-
-
-
 }

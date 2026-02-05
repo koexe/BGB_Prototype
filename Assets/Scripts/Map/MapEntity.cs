@@ -66,14 +66,16 @@ public class MapEntity : MonoBehaviour
 [System.Serializable]
 public class EnemySetting
 {
-    public EnemyBase enemy;
+    public EnemyBehavior enemy;
     public Transform position;
     public float interval;
 
     public async UniTask Spawn(Action _enemyKillAction)
     {
         await UniTask.WaitForSeconds(this.interval * 1000);
-        GameObject.Instantiate(this.enemy, this.position.position, Quaternion.identity).GetComponent<EnemyBase>().Initialization(_enemyKillAction);
+        var t_enemy = GameObject.Instantiate(IngameManager.instance.enemyBasePrefab, this.position.position, Quaternion.identity);
+        var t_behavior = GameObject.Instantiate(this.enemy);
+        t_enemy.Initialization(t_behavior, _enemyKillAction);
     }
 }
 

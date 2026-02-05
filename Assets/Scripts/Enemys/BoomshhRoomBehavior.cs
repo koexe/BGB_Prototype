@@ -10,11 +10,6 @@ public class BoomshhRoomBehavior : EnemyBehavior
     [SerializeField] float duration = 2f;
     [SerializeField] float revolutions = 1.5f;
 
-    public override void Initialization(EnemyBase _base)
-    {
-        this.enemyBase = _base;
-    }
-
     public override void Update()
     {
         switch (this.currentState)
@@ -36,6 +31,7 @@ public class BoomshhRoomBehavior : EnemyBehavior
         switch (_state)
         {
             case EnemyBehaviorState.Idle:
+                this.animModule.PlayIdleAnimation();
                 break;
             case EnemyBehaviorState.Recognize:
                 RecognizeWait();
@@ -43,6 +39,7 @@ public class BoomshhRoomBehavior : EnemyBehavior
             case EnemyBehaviorState.Move:
                 break;
             case EnemyBehaviorState.Attack:
+                this.animModule.PlayWalkAnimation();
                 Attack();
                 break;
         }
@@ -54,6 +51,7 @@ public class BoomshhRoomBehavior : EnemyBehavior
     {
         await UniTask.WaitForSeconds(1f);
         ChangeState(EnemyBehaviorState.Move);
+        this.animModule.PlayWalkAnimation();
     }
     void Move()
     {
@@ -119,5 +117,7 @@ public class BoomshhRoomBehavior : EnemyBehavior
 
             await UniTask.Yield(PlayerLoopTiming.Update);
         }
+        this.animModule.PlayAttackAnimation();
+        //Destroy(this.enemyBase.gameObject);
     }
 }

@@ -9,16 +9,14 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] GameObject itemPrefab;
     [SerializeField] EnemyBehavior behavior;
     [SerializeField] EnemyType enemyType;
+    [SerializeField] EnemyAnimationModule enemyAnimationModule;
 
     Action onKill;
-    public void Initialization(Action _onKill)
+    public void Initialization(EnemyBehavior _behavior, Action _onKill)
     {
         this.onKill = _onKill;
-        Type t_behaviorType = DataLibrary.instance.GetEnemyType(enemyType);
-
-        this.behavior = (EnemyBehavior)Activator.CreateInstance(t_behaviorType);
-
-        this.behavior.Initialization(this);
+        this.behavior = _behavior;
+        this.behavior.Initialization(this, this.enemyAnimationModule);
     }
 
 
