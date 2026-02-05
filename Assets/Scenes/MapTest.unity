@@ -382,6 +382,7 @@ MonoBehaviour:
   gameState: 1
   currentWeapon: 1
   player: {fileID: 2115781047}
+  enemyBasePrefab: {fileID: -7467744087590539764, guid: 3e58338ec77c2d845ac930c6f845d593, type: 3}
 --- !u!4 &1288566770
 Transform:
   m_ObjectHideFlags: 0

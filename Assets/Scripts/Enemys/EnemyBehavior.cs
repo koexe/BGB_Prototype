@@ -4,15 +4,23 @@ using UnityEngine;
 
 public abstract class EnemyBehavior : ScriptableObject
 {
+    [SerializeField] RuntimeAnimatorController anim;
     [SerializeField] protected float hp;
     [SerializeField] protected float recognizeRad = 6f;
     [SerializeField] protected float speed = 3f;
     [SerializeField] protected float attackRad = 1f;
     [SerializeField] protected EnemyType enemyType;
 
+    protected EnemyAnimationModule animModule;
     protected EnemyBase enemyBase;
     protected EnemyBehaviorState currentState;
-    public abstract void Initialization(EnemyBase _base);
+    public virtual void Initialization(EnemyBase _base, EnemyAnimationModule _animationModule)
+    {
+        this.enemyBase = _base;
+        this.animModule = _animationModule;
+        this.animModule.Initialization(this.anim);
+        ChangeState(EnemyBehaviorState.Attack);
+    }
     public abstract void Update();
     public abstract void ChangeState(EnemyBehaviorState _state);
 
@@ -24,4 +32,5 @@ public abstract class EnemyBehavior : ScriptableObject
         Attack,
     }
     public EnemyType GetEnemyType() { return this.enemyType; }
+    public RuntimeAnimatorController GetAnim() => this.anim;
 }

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b168f47fdb20ddd4083c32b01af38539, type: 3}
   m_Name: Enemy_BoomShhRoom
   m_EditorClassIdentifier: 
-  hp: 275
+  anim: {fileID: 9100000, guid: 3e048a29f5c1380478df72bfa2fed163, type: 2}
+  hp: 75
   recognizeRad: 6
   speed: 3
   attackRad: 1
-  enemyType: 2
+  enemyType: 1
   duration: 2
   revolutions: 1.5

@@ -8,13 +8,7 @@ public class BlindmawBehavior : EnemyBehavior
 {
     [SerializeField] float rungeDis = 1f;
     [SerializeField] float attackDelay = 0.3f;
-    [SerializeField] float attackDuration = 0.6f;
-
-    public override void Initialization(EnemyBase _base)
-    {
-        this.enemyBase = _base;
-    }
-
+    [SerializeField] float rungeSpeed = 60f;
     public override void Update()
     {
         switch (this.currentState)
@@ -36,13 +30,16 @@ public class BlindmawBehavior : EnemyBehavior
         switch (_state)
         {
             case EnemyBehaviorState.Idle:
+                this.animModule.PlayIdleAnimation();
                 break;
             case EnemyBehaviorState.Recognize:
                 RecognizeWait();
                 break;
             case EnemyBehaviorState.Move:
+                this.animModule.PlayWalkAnimation();
                 break;
             case EnemyBehaviorState.Attack:
+                this.animModule.PlayAttackAnimation();
                 Attack();
                 break;
         }
@@ -52,7 +49,9 @@ public class BlindmawBehavior : EnemyBehavior
 
     async void RecognizeWait()
     {
+        this.animModule.PlayIdleAnimation();
         await UniTask.WaitForSeconds(0.3f);
+        this.animModule.PlayWalkAnimation();
         ChangeState(EnemyBehaviorState.Move);
     }
     void Move()
@@ -90,22 +89,23 @@ public class BlindmawBehavior : EnemyBehavior
             return;
 
         Vector2 t_startPos = this.enemyBase.transform.position;
-        Vector2 t_targetDir =
-            ((Vector2)t_player.transform.position - t_startPos).normalized;
+        Vector2 t_targetPos = t_player.transform.position;
+        Vector2 t_targetDir = (t_targetPos - t_startPos).normalized;
 
-        float t_elapsed = 0f;
+        float t_movedDistance = 0f;
 
-        // attackDuration 동안 돌진
-        while (t_elapsed < this.attackDuration)
+        while (t_movedDistance < this.rungeDis)
         {
-            float t_dt = Time.deltaTime;
-            t_elapsed += t_dt;
+            float t_step = this.rungeSpeed * Time.fixedDeltaTime;
 
             this.enemyBase.transform.position +=
-                (Vector3)(t_targetDir * this.rungeDis * t_dt);
+                (Vector3)(t_targetDir * t_step);
 
-            await UniTask.Yield(PlayerLoopTiming.Update);
+            t_movedDistance += t_step;
+
+            await UniTask.WaitForFixedUpdate();
         }
+
         ChangeState(EnemyBehaviorState.Move);
     }
 }

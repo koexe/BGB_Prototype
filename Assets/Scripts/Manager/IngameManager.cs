@@ -14,7 +14,7 @@ public class IngameManager : MonoBehaviour
     [SerializeField] public GameState gameState;
     [SerializeField] public int currentWeapon;
     [SerializeField] PlayerCharacter player;
-
+    [SerializeField] public EnemyBase enemyBasePrefab;
 
     private void Update()
     {
