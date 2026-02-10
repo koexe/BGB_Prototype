@@ -168,4 +168,13 @@ public class PlayerCharacter : MonoBehaviour
             return;
         }
     }
+
+    public void AddBuff()
+    {
+
+    }
+    public void AddBaseStat(StatBlock _stat)
+    {
+        this.statSystem.AddBaseStat(_stat);
+    }
 }

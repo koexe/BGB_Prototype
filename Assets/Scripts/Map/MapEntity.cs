@@ -48,6 +48,8 @@ public class MapEntity : MonoBehaviour
 
     public async void WaveStart()
     {
+        if (this.isWaveEnded) return;
+
         for (int i = 0; i < this.waveSetting.Count; i++)
         {
             this.targetKillCount = this.waveSetting[i].GetKillCount();
@@ -59,6 +61,7 @@ public class MapEntity : MonoBehaviour
             }
             this.currentKillCount = 0;
         }
+        this.isWaveEnded = true;
     }
 }
 

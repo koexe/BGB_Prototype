@@ -5,6 +5,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Cysharp.Threading.Tasks;
 using System;
+using System.Linq;
 
 public class DataLibrary : MonoBehaviour
 {
@@ -150,6 +151,14 @@ public class DataLibrary : MonoBehaviour
         }
     }
 
+    public PerkInfo GetRandomPerk(PerkType _type, System.Random _rng)
+    {
+        if (!this.perkInfoDic.TryGetValue(_type, out var t_dic) || t_dic.Count == 0)
+            return null;
+
+        int t_index = _rng.Next(t_dic.Count);
+        return t_dic.Values.ElementAt(t_index);
+    }
 
     #endregion
 }

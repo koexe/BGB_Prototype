@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5322066122779555786}
+  spriteRenderer: {fileID: 4762522021288700222}
 --- !u!1 &4762522021962912911
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class StatSystem
 {
@@ -21,6 +22,29 @@ public class StatSystem
         this.baseStats.Add(StatType.CritMag, new StatBlock(StatType.CritMag, _weaponInfo.critMag, StatSign.Static));
         this.baseStats.Add(StatType.Mag, new StatBlock(StatType.Mag, _weaponInfo.mag, StatSign.Static));
         this.baseStats.Add(StatType.ReloadTime, new StatBlock(StatType.ReloadTime, _weaponInfo.reload, StatSign.Static));
+    }
+    public void AddBaseStat(StatBlock _stat)
+    {
+        if (!this.baseStats.ContainsKey(_stat.statType))
+            this.baseStats.Add(_stat.statType, _stat);
+        else
+        {
+            switch (_stat.sign)
+            {
+                case StatSign.Static:
+                    this.baseStats[_stat.statType].value += _stat.value;
+                    break;
+                case StatSign.Constant:
+                    this.baseStats[_stat.statType].value += _stat.value;
+                    break;
+                case StatSign.Percentage:
+                    float t_statValue = this.baseStats[_stat.statType].value * _stat.value;
+                    this.baseStats[_stat.statType].value = t_statValue;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void AddBuff(BuffBlock _buff)

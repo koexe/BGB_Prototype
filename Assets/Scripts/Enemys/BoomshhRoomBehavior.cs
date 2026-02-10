@@ -113,11 +113,20 @@ public class BoomshhRoomBehavior : EnemyBehavior
                 t_center +
                 new Vector2(Mathf.Cos(t_angle), Mathf.Sin(t_angle)) * this.attackRad;
 
+            FlipSprite(t_newPos);
+
             this.enemyBase.transform.position = t_newPos;
 
             await UniTask.Yield(PlayerLoopTiming.Update);
         }
         this.animModule.PlayAttackAnimation();
         //Destroy(this.enemyBase.gameObject);
+    }
+    public void FlipSprite(Vector3 _target)
+    {
+        if (_target.x > this.enemyBase.transform.position.x)
+            this.animModule.Flip(true);
+        else
+            this.animModule.Flip(false);
     }
 }

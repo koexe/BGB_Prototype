@@ -59,6 +59,7 @@ public class BlindmawBehavior : EnemyBehavior
         var t_player = IngameManager.instance.GetPlayer();
         if (Vector2.Distance(t_player.transform.position, this.enemyBase.transform.position) >= this.attackRad)
         {
+            FlipSprite(t_player.transform.position);
             Vector3 t_dir = (t_player.transform.position - this.enemyBase.transform.position).normalized;
             this.enemyBase.transform.position += t_dir * this.speed * Time.fixedDeltaTime;
         }
@@ -92,6 +93,8 @@ public class BlindmawBehavior : EnemyBehavior
         Vector2 t_targetPos = t_player.transform.position;
         Vector2 t_targetDir = (t_targetPos - t_startPos).normalized;
 
+        FlipSprite(t_targetPos);
+
         float t_movedDistance = 0f;
 
         while (t_movedDistance < this.rungeDis)
@@ -107,5 +110,12 @@ public class BlindmawBehavior : EnemyBehavior
         }
 
         ChangeState(EnemyBehaviorState.Move);
+    }
+    public void FlipSprite(Vector3 _target)
+    {
+        if (_target.x > this.enemyBase.transform.position.x)
+            this.animModule.Flip(true);
+        else
+            this.animModule.Flip(false);
     }
 }
