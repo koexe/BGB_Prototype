@@ -37,6 +37,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UIPrefab
+    - UIElements
   - m_GUID: 9f7b0a76a1a7a22449afc843dfa07a8c
     m_Address: Assets/TextAssets/PerkOptions.csv
     m_ReadOnly: 0
@@ -45,6 +46,11 @@ MonoBehaviour:
     m_Address: Assets/Prefab/Maps/Monster/Map 1.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e66ebaa23c4931748b6e46b136770fb9
+    m_Address: Assets/Prefab/UI/RewardUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UIElements
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ffbbed248a9d890409b94f1f98fac8bf, type: 2}
   m_SchemaSet:
