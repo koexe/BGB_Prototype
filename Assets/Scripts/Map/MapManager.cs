@@ -17,6 +17,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] bool drawConnections = true;        // 방 사이 선 표시
 
     [SerializeField] int currentDepth = 0;
+    [SerializeField] int currentWidth = 0;
     public void CreateMapEntity(MapNode[,] _map)
     {
         int t_depthCount = _map.GetLength(0);
@@ -108,15 +109,16 @@ public class MapManager : MonoBehaviour
         this.mapEntities = t_mapEntitys;
         this.mapNodes = _map;
         this.currentMap = this.mapEntities[0, 0];
-        this.mapEntities[0,0].gameObject.SetActive(true);
+        this.mapEntities[0, 0].gameObject.SetActive(true);
         this.currentMap.MoveMap();
     }
 
     public void MoveMap(int _dir)
     {
         this.currentDepth++;
+        this.currentWidth = _dir;
 
-        if(this.mapEntities[this.currentDepth, _dir] == null)
+        if (this.mapEntities[this.currentDepth, _dir] == null)
         {
             LogUtil.LogWarning("not exist path");
             return;
@@ -232,4 +234,6 @@ public class MapManager : MonoBehaviour
         float t_y = this.gizmoOrigin.y + _lane * this.gizmoCellSize;
         return new Vector3(t_x, t_y, 0f);
     }
+    public (int depth, int width) GetCurrentNodePos() => (this.currentDepth, this.currentWidth);
+
 }

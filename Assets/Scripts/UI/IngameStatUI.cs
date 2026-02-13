@@ -56,6 +56,14 @@ public class IngameStatUI : UIBase
             this.healthUI.UntoggleOne();
         }
     }
+    public void UseMag()
+    {
+        this.magUI.UntoggleOne();
+    }
+    public void ResetMag()
+    {
+        this.magUI.ToggleAll();
+    }
 }
 
 public class IngameStatUIData : UIData

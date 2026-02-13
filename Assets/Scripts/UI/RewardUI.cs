@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RewardUI : UIBase
 {
+    public static string identifier = "RewardUI";
     [SerializeField] RewardElement[] elements;
 
     public override void Initialization(UIData _data)
@@ -15,7 +16,7 @@ public class RewardUI : UIBase
             Debug.Log("Invalid DataType in RewardUI");
             return;
         }
-
+        this.data = _data;
         for (int i = 0; i < t_rewardUIData.rewardInfos.Count; i++)
         {
             this.elements[i].Initialization(t_rewardUIData.rewardInfos[i]);

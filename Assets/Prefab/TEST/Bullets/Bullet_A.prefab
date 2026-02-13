@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDir: {x: 0, y: 0}
   homingRad: 5
-  damage: 1
+  damage: 10
   bulletEffect: {fileID: 728895844427971560}
   col: {fileID: 1757183094488081886}
   particle: {fileID: 728895844409898386}

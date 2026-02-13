@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy_BlindMaw
   m_EditorClassIdentifier: 
   anim: {fileID: 9100000, guid: 69363a910d787a44f9da3c268db9b45c, type: 2}
-  hp: 275
+  hp: 1
   recognizeRad: 6
   speed: 3
   attackRad: 2

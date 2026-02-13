@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public abstract class EnemyBehavior : ScriptableObject
@@ -10,6 +11,8 @@ public abstract class EnemyBehavior : ScriptableObject
     [SerializeField] protected float speed = 3f;
     [SerializeField] protected float attackRad = 1f;
     [SerializeField] protected EnemyType enemyType;
+
+    protected CancellationTokenSource cts;
 
     protected EnemyAnimationModule animModule;
     protected EnemyBase enemyBase;
@@ -23,7 +26,15 @@ public abstract class EnemyBehavior : ScriptableObject
     }
     public abstract void Update();
     public abstract void ChangeState(EnemyBehaviorState _state);
-
+    public void CancelAllAsync()
+    {
+        if (this.cts != null)
+        {
+            this.cts.Cancel();
+            this.cts.Dispose();
+            this.cts = null;
+        }
+    }
     public enum EnemyBehaviorState
     {
         Idle,
@@ -33,4 +44,5 @@ public abstract class EnemyBehavior : ScriptableObject
     }
     public EnemyType GetEnemyType() { return this.enemyType; }
     public RuntimeAnimatorController GetAnim() => this.anim;
+    public float GetHp() => this.hp;
 }

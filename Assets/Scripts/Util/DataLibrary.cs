@@ -104,7 +104,7 @@ public class DataLibrary : MonoBehaviour
     {
 
         this.uiPrefabs = new Dictionary<string, GameObject>();
-        this.uiHandle = Addressables.LoadAssetsAsync<GameObject>("UIPrefab", (t_prefab) =>
+        this.uiHandle = Addressables.LoadAssetsAsync<GameObject>("UIElements", (t_prefab) =>
         {
             this.uiPrefabs.Add(t_prefab.name, t_prefab);
         });
@@ -151,14 +151,31 @@ public class DataLibrary : MonoBehaviour
         }
     }
 
-    public PerkInfo GetRandomPerk(PerkType _type, System.Random _rng)
+    public List<PerkInfo> GetRandomPerk(
+        PerkType _type,
+        System.Random _rng,
+        int _count = 1)
     {
         if (!this.perkInfoDic.TryGetValue(_type, out var t_dic) || t_dic.Count == 0)
             return null;
 
-        int t_index = _rng.Next(t_dic.Count);
-        return t_dic.Values.ElementAt(t_index);
+        // Value들을 리스트로 복사
+        List<PerkInfo> t_list = new List<PerkInfo>(t_dic.Values);
+
+        // 요청 개수가 전체보다 많으면 보정
+        _count = Mathf.Min(_count, t_list.Count);
+
+        // Fisher–Yates Shuffle (시드 기반)
+        for (int i = 0; i < t_list.Count; i++)
+        {
+            int j = _rng.Next(i, t_list.Count);
+            (t_list[i], t_list[j]) = (t_list[j], t_list[i]);
+        }
+
+        // 앞에서 _count개 반환
+        return t_list.GetRange(0, _count);
     }
+
 
     #endregion
 }

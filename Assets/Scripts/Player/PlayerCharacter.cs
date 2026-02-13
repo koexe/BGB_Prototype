@@ -128,13 +128,8 @@ public class PlayerCharacter : MonoBehaviour
 
         this.isInRoll = true;
         this.currentRoll--;
-        Vector3 t_mouseScreenPos = Input.mousePosition;
-        Vector3 t_mouseWorldPos = Camera.main.ScreenToWorldPoint(t_mouseScreenPos);
-        t_mouseWorldPos.z = 0f;
 
-        Vector3 t_dir = (t_mouseWorldPos - transform.position).normalized;
-
-        this.physicsModule.AddForce(this.rollForce.DuplacateForce(t_dir));
+        this.physicsModule.AddForce(this.rollForce.DuplacateForce(this.currentInput));
         await UniTask.WaitForSeconds(this.rollForce.duration);
 
         this.isInRoll = false;

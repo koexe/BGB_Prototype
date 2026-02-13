@@ -28,31 +28,38 @@ public class BoomshhRoomBehavior : EnemyBehavior
     }
     public override void ChangeState(EnemyBehaviorState _state)
     {
+        CancelAllAsync();
+
+        this.cts = new CancellationTokenSource();
+
         switch (_state)
         {
             case EnemyBehaviorState.Idle:
                 this.animModule.PlayIdleAnimation();
                 break;
+
             case EnemyBehaviorState.Recognize:
-                RecognizeWait();
+                RecognizeWait(this.cts.Token).Forget();
                 break;
+
             case EnemyBehaviorState.Move:
                 break;
+
             case EnemyBehaviorState.Attack:
                 this.animModule.PlayWalkAnimation();
-                Attack();
+                Attack(this.cts.Token).Forget();
                 break;
         }
+
         this.currentState = _state;
     }
 
-
-    async void RecognizeWait()
+    async UniTaskVoid RecognizeWait(CancellationToken _ct)
     {
-        await UniTask.WaitForSeconds(1f);
+        await UniTask.WaitForSeconds(1f, cancellationToken: _ct);
         ChangeState(EnemyBehaviorState.Move);
-        this.animModule.PlayWalkAnimation();
     }
+
     void Move()
     {
         var t_player = IngameManager.instance.GetPlayer();
@@ -76,10 +83,10 @@ public class BoomshhRoomBehavior : EnemyBehavior
         }
         else
         {
-            RecognizeWait();
+            RecognizeWait(this.cts.Token);
         }
     }
-    async void Attack()
+    async UniTaskVoid Attack(CancellationToken _ct)
     {
         var t_player = IngameManager.instance.GetPlayer();
         if (t_player == null)
@@ -87,7 +94,6 @@ public class BoomshhRoomBehavior : EnemyBehavior
 
         Transform t_playerTr = t_player.transform;
 
-        // 시작 오프셋 기준 각도 계산 (튐 방지)
         Vector2 t_center = t_playerTr.position;
         Vector2 t_offset = (Vector2)this.enemyBase.transform.position - t_center;
 
@@ -99,7 +105,8 @@ public class BoomshhRoomBehavior : EnemyBehavior
 
         while (t_elapsed < this.duration)
         {
-            // 플레이어 이동 따라가기
+            _ct.ThrowIfCancellationRequested(); 
+
             t_center = t_playerTr.position;
 
             t_elapsed += Time.deltaTime;
@@ -117,10 +124,10 @@ public class BoomshhRoomBehavior : EnemyBehavior
 
             this.enemyBase.transform.position = t_newPos;
 
-            await UniTask.Yield(PlayerLoopTiming.Update);
+            await UniTask.Yield(PlayerLoopTiming.Update, _ct);
         }
+
         this.animModule.PlayAttackAnimation();
-        //Destroy(this.enemyBase.gameObject);
     }
     public void FlipSprite(Vector3 _target)
     {

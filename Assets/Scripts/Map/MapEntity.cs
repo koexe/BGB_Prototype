@@ -52,16 +52,23 @@ public class MapEntity : MonoBehaviour
 
         for (int i = 0; i < this.waveSetting.Count; i++)
         {
+            this.currentKillCount = 0;
             this.targetKillCount = this.waveSetting[i].GetKillCount();
             await this.waveSetting[i].StartWave(OnKill);
 
             while (this.targetKillCount != this.currentKillCount)
             {
-                await UniTask.WaitForSeconds(1000);
+                await UniTask.WaitForSeconds(1);
+                
             }
-            this.currentKillCount = 0;
         }
         this.isWaveEnded = true;
+        EndWave();
+    }
+
+    void EndWave()
+    {
+        IngameManager.instance.GetReward();
     }
 }
 
@@ -75,7 +82,7 @@ public class EnemySetting
 
     public async UniTask Spawn(Action _enemyKillAction)
     {
-        await UniTask.WaitForSeconds(this.interval * 1000);
+        await UniTask.WaitForSeconds(this.interval);
         var t_enemy = GameObject.Instantiate(IngameManager.instance.enemyBasePrefab, this.position.position, Quaternion.identity);
         var t_behavior = GameObject.Instantiate(this.enemy);
         t_enemy.Initialization(t_behavior, _enemyKillAction);

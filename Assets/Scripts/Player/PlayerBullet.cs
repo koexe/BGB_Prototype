@@ -41,7 +41,7 @@ public class PlayerBullet : MonoBehaviour
         }
 
         this.isInAttack = true;
-
+        UIManager.instance.GetUI<IngameStatUI>(IngameStatUI.identifier).UseMag();
         this.currentMag--;
 
         var t_bullet = Instantiate(_temp_bullet).GetComponent<Bullet>();
@@ -62,6 +62,7 @@ public class PlayerBullet : MonoBehaviour
     {
         await UniTask.WaitForSeconds(this.playerStat.GetStat(StatType.ReloadTime));
         this.currentMag = (int)this.playerStat.GetStat(StatType.Mag);
+        UIManager.instance.GetUI<IngameStatUI>(IngameStatUI.identifier).ResetMag();
     }
 
 }

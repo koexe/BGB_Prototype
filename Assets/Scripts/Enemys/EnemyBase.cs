@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    [SerializeField] int hp;
+    [SerializeField] float hp;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] EnemyBehavior behavior;
     [SerializeField] EnemyType enemyType;
@@ -16,6 +16,7 @@ public class EnemyBase : MonoBehaviour
     {
         this.onKill = _onKill;
         this.behavior = _behavior;
+        this.hp = _behavior.GetHp();
         this.behavior.Initialization(this, this.enemyAnimationModule);
     }
 
@@ -32,7 +33,7 @@ public class EnemyBase : MonoBehaviour
         if (this.hp <= 0)
         {
             this.onKill?.Invoke();
-            //Instantiate(itemPrefab, this.transform.position, Quaternion.identity);
+            this.behavior.CancelAllAsync();
             Destroy(this.gameObject);
         }
 
