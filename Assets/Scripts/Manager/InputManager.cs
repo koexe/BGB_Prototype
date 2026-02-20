@@ -16,7 +16,10 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
 
         this.keyDownActions = new Dictionary<KeyCode, Action>();
         this.keyActions = new Dictionary<KeyCode, Action>();
@@ -25,6 +28,8 @@ public class InputManager : MonoBehaviour
         this.mouseDownActions = new Dictionary<int, Action>();
         this.mouseActions = new Dictionary<int, Action>();
         this.mouseUpActions = new Dictionary<int, Action>();
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
