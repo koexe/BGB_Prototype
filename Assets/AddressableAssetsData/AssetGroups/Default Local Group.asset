@@ -51,8 +51,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UIElements
-  - m_GUID: 4b4bc07110344aa4ea408590483c3827
-    m_Address: Assets/Prefab/UI/RewardUI 1.prefab
+  - m_GUID: 1d6d542e32fc1414589f1b9c7dc99395
+    m_Address: Assets/Prefab/UI/FadeUI.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - UIElements

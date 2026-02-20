@@ -21,11 +21,15 @@ public class IngameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            MapGen(this.seed);
-            this.mapManager.CreateMapEntity(this.currentMap);
-            this.player.Initialization();
-            this.gameState = GameState.Running;
+            Initialization();
         }
+    }
+    public void Initialization()
+    {
+        MapGen(this.seed);
+        this.mapManager.CreateMapEntity(this.currentMap);
+        this.player.Initialization();
+        this.gameState = GameState.Running;
     }
 
     void MapGen(string _seed)

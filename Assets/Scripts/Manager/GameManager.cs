@@ -7,9 +7,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+
+
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
+    public async void ChangeToGameScene()
+    {
+        await SceneLoadManager.ChangeToGameScene();
+        IngameManager.instance.Initialization();
+
+    }
 
     public string currentSeed;
 }
