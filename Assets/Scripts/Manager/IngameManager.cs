@@ -29,6 +29,7 @@ public class IngameManager : MonoBehaviour
         MapGen(this.seed);
         this.mapManager.CreateMapEntity(this.currentMap);
         this.player.Initialization();
+        CameraManager.instance.Initialization(Camera.main, this.player.transform);
         this.gameState = GameState.Running;
     }
 

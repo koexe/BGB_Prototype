@@ -22,7 +22,7 @@ public class MapDoor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<PlayerScript>(out var t_script))
+        if (collision.TryGetComponent<PlayerCharacter>(out var t_script))
         {
             this.currentStayTime = Mathf.MoveTowards(this.currentStayTime, this.stayTime, Time.fixedDeltaTime);
             this.isOnStay = true;
@@ -35,7 +35,7 @@ public class MapDoor : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<PlayerScript>(out var t_script))
+        if (collision.TryGetComponent<PlayerCharacter>(out var t_script))
         {
             this.isOnStay = false;
         }

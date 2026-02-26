@@ -10,6 +10,8 @@ public class MapEntity : MonoBehaviour
     [SerializeField] int roomCode;
     [SerializeField] RoomType roomType;
     [SerializeField] Transform[] doorTr;
+    [SerializeField] Transform spawnTr;
+
     [SerializeField] GameObject doorPrefab;
     [Space(20)]
     [Header("Wave Settings")]
@@ -19,12 +21,15 @@ public class MapEntity : MonoBehaviour
 
     [SerializeField] bool isWaveEnded;
     [SerializeField] bool spawnOnStart = true;
+
+
     public (int stage, RoomType roomType) GetRoomInfo() => (this.stage, this.roomType);
     public int GetRoomCode() => this.roomCode;
 
     public void MoveMap()
     {
-        if (this.spawnOnStart)
+        IngameManager.instance.GetPlayer().transform.position = this.spawnTr.position;
+        if (this.spawnOnStart && !this.isWaveEnded)
             WaveStart();
     }
 
